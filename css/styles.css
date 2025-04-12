@@ -1,17 +1,16 @@
 :root {
   --logo: #2196f3;
-    --primary-text-color: #757575;
-    --title-text-color: #212121;
-    --dark-bg-text-color: #ffffff;
-    --team-bg-color: #f5f4fa;
-    --icon-color: #afb1b8;
-    --box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --dark-bg-text-color: #ffffff;
+  --team-bg-color: #f5f4fa;
+  --icon-color: #afb1b8;
+  --box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
-  font-family: 'Roboto';
-  margin: 0; 
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 a {
@@ -28,9 +27,9 @@ span {
 }
 
 header {
-  padding: 8px 0; 
-  box-shadow: none; 
-  border-bottom: 1px solid #ECECEC; 
+  padding: 8px 0;
+  box-shadow: none;
+  border-bottom: 1px solid #ECECEC;
 }
 
 .header-container {
@@ -40,6 +39,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .logo {
@@ -51,7 +51,7 @@ header {
 }
 
 .logo span {
-  color: var(--logo); 
+  color: var(--logo);
 }
 
 .nav-list {
@@ -67,7 +67,7 @@ header {
   font-weight: 500;
   font-size: 14px;
   color: #212121;
-  padding: 8px 0; 
+  padding: 8px 0;
   display: block;
   text-decoration: none;
   transition: color 250ms ease;
@@ -111,11 +111,33 @@ main .make_order {
   color: white;
   font-size: 44px;
   font-weight: 700;
-  margin-top: 0; 
-  padding-top: 20px; 
+  margin-top: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  text-align: center;
 }
 
-button, footer button {
+main .make_order button {
+  background-color: var(--logo);
+  color: white;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 700;
+  fill: white;
+  margin-top: 0;
+  padding: 24px 36px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+button,
+footer button {
   background-color: var(--logo);
   color: white;
   font-family: 'Roboto';
@@ -135,16 +157,18 @@ button, footer button {
 
 .preferences ul {
   display: flex;
-  justify-content: center; /* Center the cards horizontally */
-  gap: 10px; /* Reduced from 30px to 10px as requested */
+  justify-content: center;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .preferences ul li {
-  width: 270px; /* Fixed width to match SVG and prevent overflow */
+  width: 270px;
   margin: 0;
+  max-width: 100%; /* Prevent overflow */
 }
 
 .preferences ul li svg {
@@ -175,9 +199,8 @@ button, footer button {
   line-height: 1.71;
   color: var(--primary-text-color);
   margin-bottom: 0;
-  word-wrap: break-word; /* Ensure text wraps within the container */
+  word-wrap: break-word;
 }
-
 
 .specialisations {
   padding-top: 0;
@@ -189,7 +212,7 @@ button, footer button {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.17;
-  color: var(--title-text-color); 
+  color: var(--title-text-color);
   text-align: center;
   margin-bottom: 50px;
 }
@@ -197,26 +220,26 @@ button, footer button {
 .specialisations ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; 
+  gap: 30px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .specialisations ul li {
-  flex-basis: calc((100% - 60px) / 3); 
+  flex-basis: calc((100% - 60px) / 3);
   margin: 0;
 }
 
 .specialisations ul li img {
-  border-radius: 10px; 
+  border-radius: 10px;
   width: 100%;
   height: auto;
   display: block;
 }
 
 .team {
-  background-color: var(--team-bg-color); 
+  background-color: var(--team-bg-color);
   padding: 94px 0;
 }
 
@@ -225,7 +248,7 @@ button, footer button {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.17;
-  color: var(--title-text-color); 
+  color: var(--title-text-color);
   text-align: center;
   margin-bottom: 50px;
 }
@@ -233,7 +256,7 @@ button, footer button {
 .team ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; 
+  gap: 30px;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -241,8 +264,8 @@ button, footer button {
 }
 
 .team ul .member {
-  flex-basis: calc((100% - 90px) / 4); 
-  background-color: var(--dark-bg-text-color); 
+  flex-basis: calc((100% - 90px) / 4);
+  background-color: var(--dark-bg-text-color);
   box-shadow: var(--box-shadow);
   border-radius: 0 0 4px 4px;
   text-align: center;
@@ -260,7 +283,7 @@ button, footer button {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.19;
-  color: var(--title-text-color); 
+  color: var(--title-text-color);
   margin-bottom: 10px;
 }
 
@@ -269,7 +292,7 @@ button, footer button {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.19;
-  color: var(--primary-text-color); 
+  color: var(--primary-text-color);
   margin-bottom: 16px;
 }
 
@@ -288,14 +311,14 @@ button, footer button {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color var(250ms cubic-bezier(0.4, 0, 0.2, 1));
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team ul .member > ul li svg {
   fill: var(--icon-color);
   width: 20px;
   height: 20px;
-  transition: fill var(250ms cubic-bezier(0.4, 0, 0.2, 1));
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team ul .member > ul li a:hover,
@@ -308,7 +331,6 @@ button, footer button {
   fill: var(--dark-bg-text-color);
 }
 
-/* Footer */
 footer {
   background-color: #2f303a;
   padding: 60px 0;
@@ -320,6 +342,7 @@ footer {
   padding: 0 15px;
   display: flex;
   gap: 70px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .footer-column {
@@ -337,7 +360,7 @@ footer {
 }
 
 .footer-column .logo span {
-  color: var(--logo); 
+  color: var(--logo);
 }
 
 footer address {
@@ -400,7 +423,7 @@ footer address a:focus {
 
 .social-links li a:hover,
 .social-links li a:focus {
-  background-color: var(--logo); 
+  background-color: var(--logo);
 }
 
 .social-links li a svg {
@@ -434,7 +457,7 @@ footer address a:focus {
 }
 
 .subscribe-form button {
-  background-color: var(--logo); 
+  background-color: var(--logo);
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -461,145 +484,154 @@ footer address a:focus {
   width: 24px;
   height: 24px;
 }
-main .make_order {
-  background-color: #2f303a;
-  color: white;
-  font-size: 44px;
-  font-weight: 700;
-  margin-top: 0;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  height: 600px; 
-  text-align: center; 
-}
 
-main .make_order button {
-  background-color: var(--logo);
-  color: white;
-  font-family: 'Roboto';
-  font-size: 18px;
-  font-weight: 700;
-  fill: white;
-  margin-top: 0;
-  padding: 24px 36px; 
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  line-height: 1;
-}
+/* Responsive Styles */
 
-/* Tablet (768px - 1199px) */
-@media (max-width: 1199px) {
-  .header-container,
-  .footer-container {
-    padding: 0 20px;
-  }
-  
-  .preferences ul,
-  .specialisations ul,
-  .team ul {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .preferences ul li,
-  .specialisations ul li {
-    flex-basis: calc((100% - 20px) / 2);
-  }
-  
-  .team ul .member {
-    flex-basis: calc((100% - 40px) / 2);
-  }
-  
-  .footer-container {
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  
-  main .make_order {
-    height: 500px;
-    font-size: 32px;
-  }
-  
-  .subscribe-form {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .subscribe-form input {
-    width: 100%;
-  }
-}
-
-/* Mobile (up to 767px) */
-@media (max-width: 767px) {
+/* Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
   .header-container {
     flex-direction: column;
+    align-items: flex-start;
     padding: 10px 15px;
   }
-  
-  .nav-list,
-  .contacts {
+
+  .nav-list {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
     margin-top: 20px;
   }
-  
-  .preferences ul li,
-  .specialisations ul li,
-  .team ul .member {
-    flex-basis: 100%;
+
+  .contacts {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
   }
-  
-  .section,
-  .preferences,
-  .specialisations,
-  .team {
-    padding: 40px 0;
-  }
-  
+
   main .make_order {
+    font-size: 32px; /* Smaller font for tablets */
     height: 400px;
-    font-size: 26px;
-    padding: 0 15px;
+    padding: 20px;
   }
-  
+
   main .make_order button {
-    padding: 16px 24px;
     font-size: 16px;
+    padding: 18px 28px;
   }
-  
+
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .preferences ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preferences ul li {
+    width: 100%;
+    max-width: 450px; /* Limit card width */
+  }
+
+  .preferences ul li svg {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+  }
+
+  .specialisations ul li {
+    flex-basis: calc((100% - 30px) / 2); /* Two columns */
+  }
+
+  .team ul .member {
+    flex-basis: calc((100% - 30px) / 2); /* Two columns */
+  }
+
   .footer-container {
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
   }
-  
-  .footer-column {
+
+  .subscribe-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe-form input {
     width: 100%;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .specialisations h2,
-  .team h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    max-width: 450px;
   }
 }
 
-/* Small Mobile (up to 479px) */
-@media (max-width: 479px) {
-  main .make_order {
-    font-size: 22px;
+/* Phone (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 20px; /* Smaller logo */
   }
-  
+
+  .nav-list a,
+  .contacts a {
+    font-size: 12px; /* Smaller navigation text */
+  }
+
+  main .make_order {
+    font-size: 24px; /* Even smaller font for phones */
+    height: 300px;
+    padding: 15px;
+  }
+
+  main .make_order button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .preferences ul li {
+    max-width: 100%;
+  }
+
+  .preferences ul li svg {
+    max-width: 100%;
+  }
+
+  .specialisations h2,
+  .team h2 {
+    font-size: 28px; /* Smaller headings */
+  }
+
+  .specialisations ul li {
+    flex-basis: 100%; /* One column */
+  }
+
+  .team ul .member {
+    flex-basis: 100%; /* One column */
+  }
+
+  .footer-column .logo {
+    font-size: 20px;
+  }
+
+  footer address,
+  .footer-column.social p,
+  .footer-column.subscribe p {
+    font-size: 12px; /* Smaller footer text */
+  }
+
+  .subscribe-form input {
+    height: 40px;
+    font-size: 14px;
+  }
+
   .subscribe-form button {
-    width: 100%;
-    justify-content: center;
+    font-size: 14px;
+    padding: 8px 20px;
   }
 }
