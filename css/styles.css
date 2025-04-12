@@ -491,18 +491,115 @@ main .make_order button {
   line-height: 1;
 }
 
-/* Адаптивність для планшетів */
-@media (max-width: 1024px) {
-  .block {
-      flex: 1 1 100%;
-      /* Одна колонка */
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+  .header-container,
+  .footer-container {
+    padding: 0 20px;
+  }
+  
+  .preferences ul,
+  .specialisations ul,
+  .team ul {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .preferences ul li,
+  .specialisations ul li {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+  
+  .team ul .member {
+    flex-basis: calc((100% - 40px) / 2);
+  }
+  
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  main .make_order {
+    height: 500px;
+    font-size: 32px;
+  }
+  
+  .subscribe-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .subscribe-form input {
+    width: 100%;
   }
 }
 
-/* Адаптивність для мобільних пристроїв */
-@media (max-width: 768px) {
-  .nav-menu {
-      flex-direction: column;
-      /* Вертикальне меню */
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .header-container {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+  
+  .nav-list,
+  .contacts {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .preferences ul li,
+  .specialisations ul li,
+  .team ul .member {
+    flex-basis: 100%;
+  }
+  
+  .section,
+  .preferences,
+  .specialisations,
+  .team {
+    padding: 40px 0;
+  }
+  
+  main .make_order {
+    height: 400px;
+    font-size: 26px;
+    padding: 0 15px;
+  }
+  
+  main .make_order button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-column {
+    width: 100%;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .specialisations h2,
+  .team h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Small Mobile (up to 479px) */
+@media (max-width: 479px) {
+  main .make_order {
+    font-size: 22px;
+  }
+  
+  .subscribe-form button {
+    width: 100%;
+    justify-content: center;
   }
 }
